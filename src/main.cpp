@@ -7,11 +7,22 @@ auto main() -> int {
     s.insert(6, 10);
     s.insert(0, 1);
 
-    std::cout << s[20] << " " << s[0] << " " << s[6] << std::endl;
+    for (auto &e : s) {
+        std::cout << e << std::endl;
+    }
+
+    s.erase(6);
+
+    std::cout << std::endl;
 
     for (auto &e : s) {
         std::cout << e << std::endl;
     }
 
+    s.insert(15, 333);
+    std::cout << std::endl;
+    for (auto &e : s) {
+        std::cout << e << std::endl;
+    }
     std::cout << "mhm" << std::endl;
 }
