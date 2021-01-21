@@ -60,13 +60,25 @@ public:
         } // throw?
     }
 
-    auto begin() -> decltype(std::begin(std::vector<T, A>{})) {
+    auto begin() -> iterator {
         return std::begin(_values);
     }
 
-    auto end() -> decltype(std::begin(std::vector<T, A>{})) {
+    auto end() -> iterator {
         return std::end(_values);
     }
+
+    auto cbegin() const -> const_iterator {
+        return std::cbegin(_values);
+    }
+
+    auto cend() const -> const_iterator {
+        return std::cend(_values);
+    }
+
+    /* Note, no reverse iterator since we actually don't care about the order
+     * of the elements relative to the data structure.
+     */
 
     auto size() -> size_t {
         return _values.size();
